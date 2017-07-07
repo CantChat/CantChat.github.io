@@ -1,6 +1,58 @@
 <!DOCTYPE html>
+
 <html>
-<head></head>
-<body><h1 style="font-size:500px;">羡慕</h1></body>
+
+	<head>
+
+	    <meta charset="UTF-8">
+
+	    <title>德鲁伊俱乐部山寨版云羡慕</title>
+
+    </head>
+
+<body>
+
+    <span style="font-size:500px" id="xm">羡慕</span>
+
+</body>
+
+<script type="text/javascript">
+
+window.onload=function(){
+
+	var url = window.location.href;
+
+	if(url.indexOf("?") > 0 && url.indexOf("size=") > 0){
+
+		var _size = url.split("size=")[1];
+
+		var size = _size.split("&")[0];
+
+		if(!isNaN(size)){
+
+			document.getElementById("xm").style.cssText = "font-size: "+size+"px;";
+
+		}else{
+
+			if((size.indexOf("px") > 0 && size.split("px")[1] == "") || (size.indexOf("em") > 0 && size.split("em")[1] == "")){
+
+				document.getElementById("xm").style.cssText = "font-size: "+size;
+
+			}else{
+
+				document.getElementById("xm").style.cssText = "font-size: 500px";
+
+			}
+
+		}
+
+	}
+
+}
+
+</script>
+
 </html>
+
+
 
